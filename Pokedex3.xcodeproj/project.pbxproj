@@ -57,11 +57,11 @@
 			isa = PBXGroup;
 			children = (
 				88C31EDA2A316D6B00F707B2 /* Pokedex3App.swift */,
-				88C31EDC2A316D6B00F707B2 /* Persistence.swift */,
 				88C31EE12A316D6B00F707B2 /* ContentView.swift */,
-				88C31EE32A316D6C00F707B2 /* Assets.xcassets */,
+				88C31EDC2A316D6B00F707B2 /* Persistence.swift */,
 				88C31EE52A316D6C00F707B2 /* Pokedex3.entitlements */,
 				88C31EDE2A316D6B00F707B2 /* Pokedex3.xcdatamodeld */,
+				88C31EE32A316D6C00F707B2 /* Assets.xcassets */,
 				88C31EE62A316D6C00F707B2 /* Preview Content */,
 			);
 			path = Pokedex3;
