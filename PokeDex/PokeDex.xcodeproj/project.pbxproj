@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		88A0D0CB2A9C091600F99298 /* TempPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0D0CA2A9C091600F99298 /* TempPokemon.swift */; };
+		88A0D0CD2A9C12E500F99298 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0D0CC2A9C12E500F99298 /* FetchController.swift */; };
 		88A584D82A9BFA7F000F126A /* PokeDexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A584D72A9BFA7F000F126A /* PokeDexApp.swift */; };
 		88A584DA2A9BFA7F000F126A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A584D92A9BFA7F000F126A /* Persistence.swift */; };
 		88A584DD2A9BFA7F000F126A /* PokeDex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 88A584DB2A9BFA7F000F126A /* PokeDex.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		88A0D0CA2A9C091600F99298 /* TempPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempPokemon.swift; sourceTree = "<group>"; };
+		88A0D0CC2A9C12E500F99298 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
 		88A584D42A9BFA7F000F126A /* PokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A584D72A9BFA7F000F126A /* PokeDexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDexApp.swift; sourceTree = "<group>"; };
 		88A584D92A9BFA7F000F126A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				88A584D72A9BFA7F000F126A /* PokeDexApp.swift */,
 				88A584DE2A9BFA7F000F126A /* ContentView.swift */,
 				88A0D0CA2A9C091600F99298 /* TempPokemon.swift */,
+				88A0D0CC2A9C12E500F99298 /* FetchController.swift */,
 				88A584D92A9BFA7F000F126A /* Persistence.swift */,
 				88A584DB2A9BFA7F000F126A /* PokeDex.xcdatamodeld */,
 				88A584E02A9BFA80000F126A /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			files = (
 				88A584D82A9BFA7F000F126A /* PokeDexApp.swift in Sources */,
 				88A584DD2A9BFA7F000F126A /* PokeDex.xcdatamodeld in Sources */,
+				88A0D0CD2A9C12E500F99298 /* FetchController.swift in Sources */,
 				88A0D0CB2A9C091600F99298 /* TempPokemon.swift in Sources */,
 				88A584DF2A9BFA7F000F126A /* ContentView.swift in Sources */,
 				88A584DA2A9BFA7F000F126A /* Persistence.swift in Sources */,
