@@ -1,14 +1,14 @@
 //
-//  Pokedex3App.swift
-//  Pokedex3
+//  PokeDexApp.swift
+//  PokeDex
 //
-//  Created by Nuno Mendonça on 08/06/2023.
+//  Created by Nuno Mendonça on 27/08/2023.
 //
 
 import SwiftUI
 
 @main
-struct Pokedex3App: App {
+struct PokeDexApp: App {
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

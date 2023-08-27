@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Pokedex3
+//  PokeDex
 //
-//  Created by Nuno Mendonça on 08/06/2023.
+//  Created by Nuno Mendonça on 27/08/2023.
 //
 
 import SwiftUI
@@ -12,10 +12,10 @@ struct ContentView: View {
     //Access viewContext of our environment (App)
     @Environment(\.managedObjectContext) private var viewContext
 
-    //To get our data from the Persistence. Ascending true: New values go to the bottom.
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.id, ascending: true)],
-        animation: .default) private var pokedex: FetchedResults<Pokemon>
+    //To Get the data from the DB. It's not like a table/spreadsheet.
+    //CoreData is a graph. They are nodes and they are linked between them.
+    //We sort the data from the time.
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.id, ascending: true)], animation: .default) private var pokedex: FetchedResults<Pokemon>
 
     var body: some View {
         NavigationView {
@@ -29,11 +29,9 @@ struct ContentView: View {
                 }
             }
             .toolbar {
-#if os(iOS)
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-#endif
             }
         }
     }
@@ -41,7 +39,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        //Here we use the preview, so we can preview on the sim.
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
