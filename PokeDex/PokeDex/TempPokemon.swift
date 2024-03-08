@@ -68,7 +68,7 @@ struct TempPokemon: Codable {
         var typesContainer = try container.nestedUnkeyedContainer(forKey: .types)
 
         //Run through all Types that we receive on the API
-        while !typesContainer.isAtEnd {
+        while typesContainer.isAtEnd == false {
 
             //Get into the next level: type
             let typesDictionaryContainer = try typesContainer.nestedContainer(keyedBy: PokemonKeys.TypeDictionaryKeys.self)
@@ -84,7 +84,7 @@ struct TempPokemon: Codable {
 
         var statsContainer = try container.nestedUnkeyedContainer(forKey: .stats)
 
-        while !statsContainer.isAtEnd {
+        while statsContainer.isAtEnd == false {
 
             let statsDictionaryContainer = try statsContainer.nestedContainer(keyedBy: PokemonKeys.StatDictionaryKeys.self)
             let statContainer = try statsDictionaryContainer.nestedContainer(keyedBy: PokemonKeys.StatDictionaryKeys.StatKeys.self, forKey: .stat)
@@ -114,7 +114,7 @@ struct TempPokemon: Codable {
             }
         }
 
-        var spritesContainer = try container.nestedContainer(keyedBy: PokemonKeys.SpriteKeys.self, forKey: .sprites)
+        let spritesContainer = try container.nestedContainer(keyedBy: PokemonKeys.SpriteKeys.self, forKey: .sprites)
         self.sprite = try spritesContainer.decode(URL.self, forKey: .sprite)
         self.shiny = try spritesContainer.decode(URL.self, forKey: .shiny)
     }

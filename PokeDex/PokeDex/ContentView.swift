@@ -15,7 +15,10 @@ struct ContentView: View {
     //To Get the data from the DB. It's not like a table/spreadsheet.
     //CoreData is a graph. They are nodes and they are linked between them.
     //We sort the data from the time.
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.id, ascending: true)], animation: .default) private var pokedex: FetchedResults<Pokemon>
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.id, ascending: true)],
+        animation: .default)
+    private var pokedex: FetchedResults<Pokemon>
 
     var body: some View {
         NavigationStack {

@@ -16,8 +16,8 @@ struct PersistenceController {
     //This is what is shown when we preview the data in the Xcode UI.
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
-        // Result is a truck
-        // The truck has multiple boxes (containers)
+        // Result is a truck full of stuff;
+        // The truck can have multiple boxes/containers/compartments/sections. Each have stuff.:
         // ViewContext is what is inside the box. It's the shelf. (it is the detail).
         let viewContext = result.container.viewContext
         let samplePokemon = Pokemon(context: viewContext)
@@ -44,9 +44,8 @@ struct PersistenceController {
         return result
     }()
 
-    
-
     init(inMemory: Bool = false) {
+        //We have the container called PokeDex:
         container = NSPersistentContainer(name: "PokeDex")
         if inMemory {
             //To check if data exists. If so, get it.
