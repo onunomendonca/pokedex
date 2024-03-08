@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8894D4662B9AB35A00895DC5 /* Pokemon+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894D4652B9AB35A00895DC5 /* Pokemon+Ext.swift */; };
+		8894D4682B9AB77200895DC5 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8894D4672B9AB77200895DC5 /* StatsView.swift */; };
 		88A0D0CB2A9C091600F99298 /* TempPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0D0CA2A9C091600F99298 /* TempPokemon.swift */; };
 		88A0D0CD2A9C12E500F99298 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0D0CC2A9C12E500F99298 /* FetchController.swift */; };
 		88A0D0CF2A9C18C500F99298 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0D0CE2A9C18C500F99298 /* PokemonViewModel.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		8894D4652B9AB35A00895DC5 /* Pokemon+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pokemon+Ext.swift"; sourceTree = "<group>"; };
+		8894D4672B9AB77200895DC5 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		88A0D0CA2A9C091600F99298 /* TempPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempPokemon.swift; sourceTree = "<group>"; };
 		88A0D0CC2A9C12E500F99298 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
 		88A0D0CE2A9C18C500F99298 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				88A584D72A9BFA7F000F126A /* PokeDexApp.swift */,
 				88A584DE2A9BFA7F000F126A /* ContentView.swift */,
 				88A0D0D02A9C1F3400F99298 /* PokemonDetail.swift */,
+				8894D4672B9AB77200895DC5 /* StatsView.swift */,
 				88A0D0D22A9C212800F99298 /* SamplePokemon.swift */,
 				88A0D0CA2A9C091600F99298 /* TempPokemon.swift */,
 				88A0D0CC2A9C12E500F99298 /* FetchController.swift */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8894D4682B9AB77200895DC5 /* StatsView.swift in Sources */,
 				88A584D82A9BFA7F000F126A /* PokeDexApp.swift in Sources */,
 				88A584DD2A9BFA7F000F126A /* PokeDex.xcdatamodeld in Sources */,
 				88A0D0D12A9C1F3400F99298 /* PokemonDetail.swift in Sources */,

@@ -18,12 +18,12 @@ struct PokemonDetail: View {
 
             ZStack {
 
-                Image(pokemon.background)
+                Image(self.pokemon.background)
                     .resizable()
                     .scaledToFit()
                     .shadow(color: .black, radius: 6)
 
-                AsyncImage(url: self.showShiny ? pokemon.shiny : pokemon.sprite) { image in
+                AsyncImage(url: self.showShiny ? self.pokemon.shiny : self.pokemon.sprite) { image in
                     image
                         .resizable()
                         .scaledToFit()
@@ -38,7 +38,7 @@ struct PokemonDetail: View {
 
             HStack {
 
-                ForEach(pokemon.types!, id: \.self) { type in
+                ForEach(self.pokemon.types!, id: \.self) { type in
 
                     Text(type.capitalized)
                         .font(.title2)
@@ -52,6 +52,13 @@ struct PokemonDetail: View {
                 Spacer()
             }
             .padding()
+
+            Text("Stats")
+                .font(.title)
+                .padding(.bottom, -7)
+
+            StatsView()
+                .environmentObject(self.pokemon) // it needs to know which pokemon we are watching
         }
         .navigationTitle(pokemon.name!.capitalized)
         .toolbar {

@@ -28,6 +28,7 @@ struct PersistenceController {
         samplePokemon.attack = 49
         samplePokemon.defense = 49
         samplePokemon.specialAttack = 65
+        samplePokemon.specialDefense = 65
         samplePokemon.defense = 65
         samplePokemon.speed = 45
         samplePokemon.sprite = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")

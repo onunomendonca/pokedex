@@ -37,13 +37,8 @@ struct ContentView: View {
             }
             .navigationTitle("Pokédex")
             .navigationDestination(for: Pokemon.self, destination: { pokemon in
-                AsyncImage(url: pokemon.sprite) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
+                PokemonDetail()
+                    .environmentObject(pokemon)
             })
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
