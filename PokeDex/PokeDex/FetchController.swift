@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct FetchController {
 
@@ -16,8 +17,13 @@ struct FetchController {
 
     private let baseURL = URL(string: "https://pokeapi.co/api/v2/pokemon/")!
 
-    func fetchAllPokemon() async throws -> [TempPokemon] {
+    func fetchAllPokemon() async throws -> [TempPokemon]? {
 
+        if self.havePokemon() {
+
+            return nil
+        }
+        
         var allPokemon: [TempPokemon] = []
 
         var fetchComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
@@ -68,5 +74,23 @@ struct FetchController {
         print("Fetched \(tempPokemon.id): \(tempPokemon.name)")
 
         return tempPokemon
+    }
+
+    private func havePokemon() -> Bool {
+
+        // Check if there are pokemons in the background.
+        let context = PersistenceController.shared.container.newBackgroundContext()
+
+        let fetchRequest: NSFetchRequest<Pokemon> = Pokemon.fetchRequest()
+        //I wanna fetch the pokemon that has an ID of 1 to 386
+        fetchRequest.predicate = NSPredicate(format: "id IN %@", [1, 386])
+
+        do {
+            let checkPokemon = try context.fetch(fetchRequest)
+            return checkPokemon.count == 2 ? true : false
+        } catch {
+            print("Fetch Failed: \(error)")
+            return false
+        }
     }
 }
