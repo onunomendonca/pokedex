@@ -9,9 +9,6 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    //Access viewContext of our environment (App)
-    @Environment(\.managedObjectContext) private var viewContext
-
     @StateObject private var pokemonVM = PokemonViewModel(controller: FetchController())
 
     //To Get the data from the DB. It's not like a table/spreadsheet.
@@ -22,12 +19,22 @@ struct ContentView: View {
         animation: .default)
     private var pokedex: FetchedResults<Pokemon>
 
+    //Only fetch those who are favorite.
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Pokemon.id, ascending: true)],
+        predicate: NSPredicate(format: "favorite = %d", true),
+        animation: .default
+    )
+    private var favorites: FetchedResults<Pokemon>
+
+    @State var filterByFavorites = false
+
     var body: some View {
-//        switch pokemonVM.status {
-//
-//        case .success:
+        switch pokemonVM.status {
+
+        case .success:
             NavigationStack {
-                List(pokedex) { pokemon in
+                List(self.filterByFavorites ? self.favorites : self.pokedex) { pokemon in
                     NavigationLink(value: pokemon) {
                         AsyncImage(url: pokemon.sprite) { image in
                             image
@@ -38,6 +45,11 @@ struct ContentView: View {
                         }
                         .frame(width: 100, height: 100)
                         Text(pokemon.name!.capitalized)
+
+                        if pokemon.favorite {
+                            Image(systemName: "star.fill")
+                                .foregroundStyle(.yellow)
+                        }
                     }
                 }
                 .navigationTitle("Pokédex")
@@ -47,14 +59,23 @@ struct ContentView: View {
                 })
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
+                        Button {
+                            withAnimation {
+                                filterByFavorites.toggle()
+                            }
+                        } label: {
+                            Label("Filter by Favorites", systemImage: filterByFavorites ? "star.fill" : "star")
+                        }
+                        .font(.title)
+                        .foregroundStyle(.yellow)
                     }
+                    
                 }
             }
-//
-//        default:
-//            ProgressView()
-//        }
+
+        default:
+            ProgressView()
+        }
     }
 }
 

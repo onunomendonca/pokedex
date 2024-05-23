@@ -10,6 +10,9 @@ import SwiftUI
 
 struct PokemonDetail: View {
 
+    //Access viewContext of our environment (App)
+    @Environment(\.managedObjectContext) private var viewContext
+
     @EnvironmentObject var pokemon: Pokemon
     @State private var showShiny = false
 
@@ -50,6 +53,24 @@ struct PokemonDetail: View {
                 }
 
                 Spacer()
+
+                Button {
+                    withAnimation {
+
+                        self.pokemon.favorite.toggle()
+
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            let nsError = error as NSError
+                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                        }
+                    }
+                } label: {
+                    Image(systemName: self.pokemon.favorite ? "star.fill" : "star")
+                        .foregroundStyle(.yellow)
+                        .font(.title)
+                }
             }
             .padding()
 
